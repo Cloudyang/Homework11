@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Task", "Solution Task", "{4B38B2B0-8DF2-4D47-A959-BF0182439BDE}"
 	ProjectSection(SolutionItems) = preProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Task", "Solution T
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstDB", "CodeFirstDB\CodeFirstDB.csproj", "{EF955C28-F3D1-4DE2-9A05-87253DFBCE3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussiness.Interface", "Bussiness.Interface\Bussiness.Interface.csproj", "{37CB5C91-AF90-4FE7-8626-175FA9FE104F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{EF955C28-F3D1-4DE2-9A05-87253DFBCE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF955C28-F3D1-4DE2-9A05-87253DFBCE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF955C28-F3D1-4DE2-9A05-87253DFBCE3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37CB5C91-AF90-4FE7-8626-175FA9FE104F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37CB5C91-AF90-4FE7-8626-175FA9FE104F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37CB5C91-AF90-4FE7-8626-175FA9FE104F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37CB5C91-AF90-4FE7-8626-175FA9FE104F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
