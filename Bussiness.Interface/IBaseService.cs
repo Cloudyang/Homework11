@@ -54,7 +54,7 @@ namespace Bussiness.Interface
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
         /// <returns></returns>
-        T Insert<T>(T t) where T : class;
+        int Insert<T>(T t) where T : class;
 
         /// <summary>
         /// 新增数据，即时Commit
@@ -63,40 +63,48 @@ namespace Bussiness.Interface
         /// <typeparam name="T"></typeparam>
         /// <param name="tList"></param>
         /// <returns>返回带主键的集合</returns>
-        IEnumerable<T> Insert<T>(IEnumerable<T> tList) where T : class;
+        int Insert<T>(IEnumerable<T> tList) where T : class;
 
         /// <summary>
         /// 更新数据,即时Commit
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
-        void Update<T>(T t) where T : class;
+        int Update<T>(T t) where T : class;
 
         /// <summary>
         /// 更新数据，即时Commit
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="tList"></param>
-        void Update<T>(IEnumerable<T> tList) where T : class;
+        int Update<T>(IEnumerable<T> tList) where T : class;
 
         /// <summary>
         /// 根据主键删除数据，即时Commit
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="Id"></param>
-        void Delete<T>(int Id) where T : class;
+        int Delete<T>(int Id) where T : class;
 
         /// <summary>
         /// 删除数据，即时Commit
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="t"></param>
-        void Delete<T>(T t) where T : class;
+        int Delete<T>(T t) where T : class;
+
+        /// <summary>
+        /// 批量删除
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="tList"></param>
+        /// <returns></returns>
+        int Delete<T>(IEnumerable<T> tList) where T : class;
 
         /// <summary>
         /// 立即保存全部修改
         /// </summary>
-        void Commit();
+        int Commit();
 
         /// <summary>
         /// 执行Sql 返回集合
@@ -107,6 +115,12 @@ namespace Bussiness.Interface
         /// <returns></returns>
         IQueryable<T> ExcuteQuery<T>(string sql, SqlParameter[] parameters) where T : class;
 
-        void Excute<T>(string sql, SqlParameter[] parameters) where T : class;
+        /// <summary>
+        /// 执行sql,无返回
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        int Excute(string sql, SqlParameter[] parameters)
     }
 }

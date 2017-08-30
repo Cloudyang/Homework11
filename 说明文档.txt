@@ -1,0 +1,3 @@
+1 数据库执行company_user_menu_mapping.sql，然后使用code first from database 创建实体层和context(上一期)
+  按照视频的方式建立Bussiness.Interface   Bussiness.Service层
+  答：建立Bussiness.Interface   Bussiness.Service层时，对教案类似做了一些实用优化，如原先多数方法返回void 现改用int
