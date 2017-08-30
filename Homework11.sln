@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussiness.Interface", "Buss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bussiness.Service", "Bussiness.Service\Bussiness.Service.csproj", "{A2305E65-D67F-4723-9C3F-6BE6B8987A6E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{45A93901-4839-451D-A5CC-CE87F4DC328B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A2305E65-D67F-4723-9C3F-6BE6B8987A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2305E65-D67F-4723-9C3F-6BE6B8987A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2305E65-D67F-4723-9C3F-6BE6B8987A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45A93901-4839-451D-A5CC-CE87F4DC328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45A93901-4839-451D-A5CC-CE87F4DC328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45A93901-4839-451D-A5CC-CE87F4DC328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45A93901-4839-451D-A5CC-CE87F4DC328B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
