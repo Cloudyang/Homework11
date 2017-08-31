@@ -5,12 +5,11 @@ namespace CodeFirstDB
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Homework10Context : DbContext
+    public partial class Model : DbContext
     {
-        public Homework10Context()
-            : base("name=Homework10Context")
+        public Model()
+            : base("name=Homework11Context")
         {
-            
         }
 
         public virtual DbSet<Company> Company { get; set; }
