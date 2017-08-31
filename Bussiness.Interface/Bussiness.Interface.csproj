@@ -43,8 +43,15 @@
   <ItemGroup>
     <Compile Include="IGenericService.cs" />
     <Compile Include="IBaseService.cs" />
+    <Compile Include="IUserMenuService.cs" />
     <Compile Include="Model\PageResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeFirstDB\CodeFirstDB.csproj">
+      <Project>{ef955c28-f3d1-4de2-9a05-87253dfbce3b}</Project>
+      <Name>CodeFirstDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

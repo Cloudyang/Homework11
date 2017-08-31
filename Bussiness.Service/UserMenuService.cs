@@ -1,4 +1,5 @@
-﻿using CodeFirstDB;
+﻿using Bussiness.Interface;
+using CodeFirstDB;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bussiness.Service
 {
-    public class UserMenuService : BaseService
+    public class UserMenuService : BaseService, IUserMenuService
     {
         public UserMenuService(DbContext context) : base(context)
         {
