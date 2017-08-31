@@ -47,7 +47,7 @@ namespace Bussiness.Interface
         /// <param name="isAsc"></param>
         /// <returns></returns>
         PageResult<T> QueryPage<S>(Expression<Func<T, bool>> funcWhere, int pageSize, int pageIndex,
-            Expression<Func<S>> funcOrderby, bool isAsc = true);
+            Expression<Func<T,S>> funcOrderby, bool isAsc = true);
 
         /// <summary>
         /// 新增数据，即时Commit

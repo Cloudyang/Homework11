@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace Bussiness.Service
 {
-    public abstract class GenericService<T> : IService
+    public abstract class GenericService<T> : IService<T>
          where T : class
     {
         protected DbContext Context { get; private set; }
@@ -138,5 +138,6 @@ namespace Bussiness.Service
         {
             this.Context?.Dispose();
         }
+
     }
 }

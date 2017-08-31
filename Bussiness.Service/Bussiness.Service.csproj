@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\ConsoleApp1\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -49,12 +49,17 @@
   <ItemGroup>
     <Compile Include="GenericService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="UserMenuService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Bussiness.Interface\Bussiness.Interface.csproj">
       <Project>{37cb5c91-af90-4fe7-8626-175fa9fe104f}</Project>
       <Name>Bussiness.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CodeFirstDB\CodeFirstDB.csproj">
+      <Project>{ef955c28-f3d1-4de2-9a05-87253dfbce3b}</Project>
+      <Name>CodeFirstDB</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
