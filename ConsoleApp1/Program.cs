@@ -14,24 +14,11 @@ namespace ConsoleApp1
 {
     class Program
     {
-        private static IBaseService _Service;
-        static Program()
-        {
-            ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
-            //      fileMap.ExeConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "CfgFiles\\Unity.Config.xml");//找配置文件的路径
-            fileMap.ExeConfigFilename = Path.Combine(Environment.CurrentDirectory, "CfgFiles", "Unity.Config.xml");
-            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
-            UnityConfigurationSection section = (UnityConfigurationSection)configuration.GetSection(UnityConfigurationSection.SectionName);
-
-            IUnityContainer container = new UnityContainer();
-            section.Configure(container, "Homework11Container");
-
-            _Service = container.Resolve<IBaseService>();
-        }
+        private static IUserMenuService _UserMenuService = UnityResolve<IUserMenuService>.GetInstance();
         static void Main(string[] args)
         {
             #region 测试部分增、删、改、查
-
+            _UserMenuService.DeleteMenu(1);
             #endregion
         }
     }
