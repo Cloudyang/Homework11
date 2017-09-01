@@ -39,8 +39,16 @@ namespace Bussiness.Service
         public int AddMenu(int parentId, Menu menu)
         {
             var pMenu = base.Find<Menu>(parentId);
-            menu.ParentId = pMenu.Id;
-            menu.SourcePath = $"{pMenu.SourcePath}/{Guid.NewGuid().ToString()}";
+            if (pMenu != null)
+            {
+                menu.ParentId = pMenu.Id;
+                menu.SourcePath = $"{pMenu?.SourcePath}/{Guid.NewGuid().ToString()}";
+            }
+            else
+            {
+                menu.ParentId = parentId;
+                menu.SourcePath = $"{Guid.NewGuid().ToString()}";
+            }
             return this.AddMenu(menu);
         }
 
@@ -50,7 +58,7 @@ namespace Bussiness.Service
         /// <param name="userId"></param>
         /// <param name="menuId"></param>
         /// <returns></returns>
-        public int AddUserMenuMapping(int userId,int menuId)
+        public int AddUserMenuMapping(int userId, int menuId)
         {
             return base.Insert<UserMenuMapping>(new UserMenuMapping
             {
@@ -65,7 +73,7 @@ namespace Bussiness.Service
         /// <param name="user"></param>
         /// <param name="menu"></param>
         /// <returns></returns>
-        public int AdduserMenuMapping(User user,Menu menu)
+        public int AddUserMenuMapping(User user, Menu menu)
         {
             return AddUserMenuMapping(user.Id, menu.Id);
         }
@@ -92,8 +100,29 @@ namespace Bussiness.Service
         /// <returns></returns>
         public int DeleteMenu(int id)
         {
-            base.Delete(base.Query<UserMenuMapping>(um => um.MenuId == id));
+            base.Delete(base.Query<UserMenuMapping>(um => um.MenuId == id).AsEnumerable());
             return base.Delete<Menu>(id);
+        }
+
+        /// <summary>
+        /// 物理删除某用户的时候，删除其全部的映射
+        /// </summary>
+        /// <param name="menu"></param>
+        /// <returns></returns>
+        public int DeleteUser(User menu)
+        {
+            return DeleteUser(menu.Id);
+        }
+
+        /// <summary>
+        /// 物理删除某用户的时候，删除其全部的映射
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public int DeleteUser(int userId)
+        {
+            Delete(Query<UserMenuMapping>(um => um.UserId == userId).AsEnumerable());
+            return base.Delete<User>(userId);
         }
 
         /// <summary>
@@ -138,6 +167,10 @@ namespace Bussiness.Service
         public List<Menu> FindAllChlidrenMenu(int parentId)
         {
             var menu = base.Find<Menu>(parentId);
+            if (menu == null)
+            {
+                return null;
+            }
             List<Menu> menus = base.Query<Menu>(m => m.SourcePath.StartsWith(menu.SourcePath)).ToList();
             return menus;
         }

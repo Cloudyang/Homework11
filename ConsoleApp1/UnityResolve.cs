@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+using Microsoft.Practices.Unity.InterceptionExtension;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -15,14 +16,12 @@ namespace ConsoleApp1
         static UnityResolve()
         {
             ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
-            //      fileMap.ExeConfigFilename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory + "CfgFiles\\Unity.Config.xml");//找配置文件的路径
             fileMap.ExeConfigFilename = Path.Combine(Environment.CurrentDirectory, "CfgFiles", "Unity.Config.xml");
             Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
             UnityConfigurationSection section = (UnityConfigurationSection)configuration.GetSection(UnityConfigurationSection.SectionName);
 
             IUnityContainer container = new UnityContainer();
-            section.Configure(container, "Homework11Container");
-
+            section.Configure(container, "Homework11ContainerAOP");
             Instance = container.Resolve<T>();
         }
         public static T GetInstance()

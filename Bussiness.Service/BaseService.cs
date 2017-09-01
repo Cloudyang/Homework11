@@ -11,7 +11,7 @@ using System.Data.Entity;
 
 namespace Bussiness.Service
 {
-    public abstract class BaseService : IBaseService
+    public class BaseService : IBaseService
     {
         protected DbContext Context { get; private set; }
 
@@ -66,7 +66,7 @@ namespace Bussiness.Service
         public int Insert<T>(T t) where T : class
         {
             this.Context.Set<T>().Add(t);
-            return this.Commit();           
+            return this.Commit();
         }
 
         public int Insert<T>(IEnumerable<T> tList) where T : class
@@ -95,6 +95,10 @@ namespace Bussiness.Service
         public int Delete<T>(int Id) where T : class
         {
             T t = this.Find<T>(Id);
+            if (t == null)
+            {
+                return 0;
+            }
             this.Context.Set<T>().Remove(t);
             return this.Commit();
         }

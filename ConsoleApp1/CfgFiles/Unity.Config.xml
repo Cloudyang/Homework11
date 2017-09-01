@@ -15,17 +15,16 @@
         <register type="Bussiness.Interface.IGenericService`1,Bussiness.Interface" mapTo="Bussiness.Service.GenericService`1, Bussiness.Service"/>
        </container>
 
-      <container name="testContainerAOP">
+      <container name="Homework11ContainerAOP">
         <extension type="Interception"/>
-        <register type="Ruanmou.Interface.IPhone,Ruanmou.Interface" mapTo="Ruanmou.Service.ApplePhone, Ruanmou.Service">
-          <interceptor type="InterfaceInterceptor"/>
-          <interceptionBehavior type="Ruanmou.Framework.LogBehavior, Ruanmou.Framework"/>
-          <lifetime type="transient" />
-          <constructor></constructor>
-        </register>
         <register type="System.Data.Entity.DbContext, EntityFramework" mapTo="CodeFirstDB.Model, CodeFirstDB"/>
         <register type="Bussiness.Interface.IBaseService,Bussiness.Interface" mapTo="Bussiness.Service.BaseService, Bussiness.Service"/>
-        <register type="Bussiness.Interface.IUserMenuService,Bussiness.Interface" mapTo="Bussiness.Service.UserMenuService, Bussiness.Service"/>
+        <register type="Bussiness.Interface.IUserMenuService,Bussiness.Interface" mapTo="Bussiness.Service.UserMenuService, Bussiness.Service">
+          <interceptor type="InterfaceInterceptor"/>
+          <interceptionBehavior type="ConsoleApp1.BeforeAction, ConsoleApp1"/>
+          <interceptionBehavior type="ConsoleApp1.AfterAction, ConsoleApp1"/>
+          <lifetime type="transient" />
+        </register>      
       </container>
     </containers>
   </unity>

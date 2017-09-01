@@ -7,11 +7,13 @@ namespace Bussiness.Interface
     {
         int AddMenu(Menu menu);
         int AddMenu(int parentId, Menu menu);
-        int AdduserMenuMapping(User user, Menu menu);
+        int AddUserMenuMapping(User user, Menu menu);
         int AddUserMenuMapping(int userId, int menuId);
         int AddUsers(IEnumerable<User> users);
         int DeleteMenu(Menu menu);
-        int DeleteMenu(int id);
+        int DeleteMenu(int menuId);
+        int DeleteUser(User menu);
+        int DeleteUser(int userId);
         List<Menu> FindAllChlidrenMenu(int parentId);
         List<User> FindByMenuAllUser(int menuId);
         List<Menu> FindByUserAllMenu(User user);
